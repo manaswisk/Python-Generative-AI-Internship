@@ -1,46 +1,119 @@
 # Task 3 – Multi-Tool Autonomous AI Agent
 
 ## Project Overview
-This project implements an autonomous AI agent that can select and use different tools to answer user requests.
+This project implements a Multi-Tool Autonomous AI Agent using Python, LangChain, and Google Gemini.
+
+The agent understands user questions, autonomously selects suitable tools, executes tasks, and generates meaningful responses.
 
 ## Technologies Used
-- Python
+- Python 3.11
 - LangChain
-- Google Gemini
+- Google Gemini (`gemini-3.5-flash`)
 - DuckDuckGo Search
-- Python AST and operator modules
+- Python
+- python-dotenv
 
-## Available Tools
+## Features
 
-### 1. Web Search
-Uses DuckDuckGo to retrieve information from the internet.
+### 1. DuckDuckGo Web Search
+Searches the internet and retrieves relevant information based on user queries.
 
-### 2. Calculator
-Performs mathematical calculations using Python.
+### 2. Python Calculator
+Performs mathematical calculations using a safe expression evaluator.
 
-### 3. File Reader
-Reads permitted local text files.
+### 3. Local File Reader
+Reads and summarizes supported local text files from the `sample_files` directory.
 
-## Key Features
-- Autonomous tool selection
-- Multiple tool integration
-- Mathematical calculations
-- Web information retrieval
-- Local text file reading
-- Agent execution logging
-- Error handling
+### 4. Autonomous Tool Selection
+The agent automatically determines which tool to use based on the user's request. It can also execute multiple tools to solve a single task.
 
-## How to Run
-1. Open the notebook in Google Colab.
-2. Install the required packages.
-3. Configure the Gemini API key using Colab Secrets.
-4. Create and test the three tools.
-5. Initialize the Gemini model.
-6. Create the autonomous agent.
-7. Run the agent test questions.
+## Project Structure
 
-## Security
-API keys are stored using Google Colab Secrets. They must never be committed to GitHub.
+```text
+Task3_Autonomous_AI_Agent/
+│
+├── sample_files/
+│   └── sample.txt
+│
+├── agent.py
+├── requirements.txt
+├── .env
+├── .gitignore
+└── README.md
+```
 
-## Project Status
-The three tools and the autonomous agent have been implemented. Full agent testing and execution logs are to be completed.
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/manaswisk/Python-Generative-AI-Internship.git
+```
+
+2. Navigate to the Task 3 folder.
+
+3. Create a virtual environment:
+
+```bash
+python -m venv .venv
+```
+
+4. Activate it on Windows:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+5. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+6. Create a `.env` file and add your Gemini API key:
+
+```text
+GOOGLE_API_KEY=your_google_api_key
+```
+
+## Run the Project
+
+```bash
+python agent.py
+```
+
+## Example Queries
+
+**Calculator:**
+```text
+Calculate 1250 * 48 + 750
+```
+
+**File Reader:**
+```text
+Read sample.txt and summarize its contents.
+```
+
+**Web Search:**
+```text
+Search the web for the latest developments in Generative AI.
+```
+
+**Multi-Tool Execution:**
+```text
+Read sample.txt, identify the tools mentioned,
+and calculate 2500 * 36 + 1500.
+```
+
+## Testing Results
+
+| Test | Status |
+|---|---|
+| Python Calculator | Passed |
+| Local File Reader | Passed |
+| DuckDuckGo Web Search | Passed |
+| Multi-Tool Execution | Passed |
+
+## Conclusion
+
+The project successfully demonstrates an autonomous AI agent capable of selecting and executing multiple tools using LangChain and Google Gemini. It showcases practical applications of Generative AI, tool calling, and multi-step problem solving.
