@@ -1,0 +1,15 @@
+Python Generative AI Internship
+
+Task 3: Multi-Tool Autonomous AI Agent
+
+This project uses Google Gemini and LangChain
+to build an autonomous AI assistant.
+
+The agent has three tools:
+
+1. DuckDuckGo Web Search
+2. Python Calculator
+3. Local File Reader
+
+The agent selects the appropriate tool
+depending on the user's question.
